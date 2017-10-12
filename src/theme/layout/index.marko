@@ -1,0 +1,16 @@
+$ let links = [{url:"home.html", name: "home"}, {url:"faq.html", name: "FAQ"}, {url:"article1.html", name: "Article 1"}, {url:"article2.html", name: "Article 2"}]
+
+<div>
+    <header>
+        <nav>
+            <for(item in links | separator=" | ")>
+                <a href="${item.url}">${item.name}</a>
+            </for>
+        </nav>
+    </header>
+    <pre>Check the console for log messages - detach is only ever called when switching between article 1 and 2</pre>
+
+    <page(input)/>
+
+    <footer></footer>
+</div>

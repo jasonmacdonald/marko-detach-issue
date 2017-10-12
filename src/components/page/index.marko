@@ -1,0 +1,14 @@
+class {
+
+    handleAttach(event, node){
+        console.log(`+ attached: ${node.id}`);
+    }
+
+    handleDetach(event, node){
+        console.log(`---- detached: ${node.id}`);
+    }
+}
+<!-- If I don't put a unique key here for each page, then attach/detach is never called when switching between article 1 and 2, but it's never called on home and faq -->
+<div on-attach('handleAttach') on-detach('handleDetach') key=input.text id=input.text>
+    <include(input.renderBody) />
+</div>
